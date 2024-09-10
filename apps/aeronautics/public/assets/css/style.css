@@ -170,6 +170,7 @@ address {
 html {
   font-size: 10px;
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -179,6 +180,7 @@ body {
   font-size: 1.6rem;
   line-height: var(--lineHeight-4);
   overflow-y: overlay;
+  
 }
 
 body.nav-active {
@@ -394,7 +396,7 @@ body.nav-active {
 }
 
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: -340px;
   max-width: 340px;
