@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import fullLogoImage from '../../images/logo-with-label.png';
+import { Image } from 'astro:assets';
+
+const links = [
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/company/gdg-on-campus-ensam-casablanca/',
+  },
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/gdg_ensamc/',
+  },
+  {
+    name: 'Facebook',
+    url: 'https://facebook.com/gdg.ensamc',
+  },
+  {
+    name: 'Meetup',
+    url: 'https://meetup.com/gdg',
+  },
+];
+---
+
+<Layout title="GDG on Campus ENSAM Casablanca">
+  <section
+    class="relative overflow-hidden bg-gradient-to-b from-blue-100 via-blue-50 to-transparent pb-12 pt-20 sm:pb-16 sm:pt-32 lg:pb-24 xl:pb-32 xl:pt-40"
+  >
+    <div class="relative z-10">
+      <div
+        class="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 justify-center overflow-hidden [mask-image:radial-gradient(50%_45%_at_50%_55%,white,transparent)]"
+      >
+        <svg
+          class="h-[60rem] w-[100rem] flex-none stroke-blue-600 opacity-20"
+          aria-hidden="true"
+        >
+          <defs>
+            <pattern
+              id="e9033f3e-f665-41a6-84ef-756f6778e6fe"
+              width="200"
+              height="200"
+              x="50%"
+              y="50%"
+              patternUnits="userSpaceOnUse"
+              patternTransform="translate(-100 0)"
+            >
+              <path d="M.5 200V.5H200" fill="none"></path>
+            </pattern>
+          </defs>
+          <svg x="50%" y="50%" class="overflow-visible fill-blue-50">
+            <path
+              d="M-300 0h201v201h-201Z M300 200h201v201h-201Z"
+              stroke-width="0"></path>
+          </svg>
+          <rect
+            width="100%"
+            height="100%"
+            stroke-width="0"
+            fill="url(#e9033f3e-f665-41a6-84ef-756f6778e6fe)"
+          >
+          </rect>
+        </svg>
+      </div>
+    </div>
+    <div class="relative z-20 mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <Image
+          class="mx-auto w-full max-w-64 lg:max-w-96"
+          src={fullLogoImage}
+          alt="GDG on Campus"
+        />
+        <h2 class="mt-6 text-lg leading-8 text-gray-600">
+          Vibrant community of tech enthusiasts, innovators, and developers
+          passionate about Google technologies and beyond.
+        </h2>
+      </div>
+      <div class="relative mx-auto mt-10 max-w-lg">
+        <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+          {
+            links.map((link) => (
+              <a
+                href={link.url}
+                target="_blank"
+                class="flex items-center justify-center p-4 text-blue-600 bg-white rounded-lg shadow-lg border"
+              >
+                {link.name}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

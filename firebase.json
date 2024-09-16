@@ -21,6 +21,17 @@
           "destination": "/index.html"
         }
       ]
+    },
+    {
+      "target": "gdg",
+      "public": "dist/apps/gdg",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
     }
   ]
 }
