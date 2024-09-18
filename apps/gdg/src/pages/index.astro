@@ -5,6 +5,11 @@ import { Image } from 'astro:assets';
 
 const links = [
   {
+    name: 'Join our Chapter',
+    url: 'https://gdg.community.dev/gdg-on-campus-ensam-casablanca-casablanca-morocco/',
+    spanFull: true,
+  },
+  {
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/company/gdg-on-campus-ensam-casablanca/',
   },
@@ -25,7 +30,7 @@ const links = [
 
 <Layout title="GDG on Campus ENSAM Casablanca">
   <section
-    class="relative overflow-hidden bg-gradient-to-b from-blue-100 via-blue-50 to-transparent pb-12 pt-20 sm:pb-16 sm:pt-32 lg:pb-24 xl:pb-32 xl:pt-40"
+    class="relative overflow-hidden bg-gradient-to-b from-blue-100 via-transparent to-transparent pb-12 pt-20 sm:pb-16 sm:pt-32 lg:pb-24 xl:pb-32 xl:pt-40"
   >
     <div class="relative z-10">
       <div
@@ -76,13 +81,16 @@ const links = [
         </h2>
       </div>
       <div class="relative mx-auto mt-10 max-w-lg">
-        <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+        <div class="grid sm:grid-cols-2 gap-4 lg:grid-cols-4">
           {
             links.map((link) => (
               <a
                 href={link.url}
                 target="_blank"
-                class="flex items-center justify-center p-4 text-blue-600 bg-white rounded-lg shadow-lg border"
+                class={
+                  'flex text-center items-center justify-center p-4 text-blue-600 bg-white rounded-lg shadow-lg border' +
+                  (link.spanFull ? ' col-span-full' : '')
+                }
               >
                 {link.name}
               </a>
